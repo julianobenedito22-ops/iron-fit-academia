@@ -1,0 +1,554 @@
+
+
+/* CONFIGURAÇÕES GERAIS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #080808;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+}
+
+/* CABEÇALHO */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 7%;
+    background-color: #111111;
+    border-bottom: 2px solid #f5c400;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+}
+
+.logo span {
+    color: #f5c400;
+}
+
+.logo small {
+    display: block;
+    font-size: 10px;
+    letter-spacing: 6px;
+    text-align: center;
+}
+
+/* MENU */
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #f5c400;
+}
+
+/* APRESENTAÇÃO */
+
+.hero {
+    min-height: 650px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+
+    background: linear-gradient(
+        135deg,
+        #080808,
+        #242016,
+        #080808
+    );
+}
+
+.hero h1 {
+    font-size: 55px;
+    font-weight: 900;
+}
+
+.hero h1 span {
+    display: block;
+    color: #f5c400;
+    font-size: 75px;
+}
+
+.hero p {
+    max-width: 550px;
+    color: #cccccc;
+    font-size: 18px;
+    line-height: 1.7;
+    margin: 25px 0;
+}
+
+/* BOTÃO */
+
+.botao {
+    display: inline-block;
+    background-color: #f5c400;
+    color: #080808;
+    padding: 16px 28px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.botao:hover {
+    background-color: white;
+    transform: scale(1.05);
+}
+
+/* RODAPÉ */
+
+footer {
+    background-color: #111111;
+    border-top: 1px solid #f5c400;
+    text-align: center;
+    padding: 25px;
+    color: #aaaaaa;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+/* CELULARES */
+
+@media (max-width: 700px) {
+
+    header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .hero h1 span {
+        font-size: 50px;
+    }
+
+}
+/* IMAGEM DA ACADEMIA */
+
+.hero img {
+    display: block;
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    margin: 30px auto;
+    border: 2px solid #f5c400;
+    border-radius: 10px;
+}
+
+/* SOBRE A IRON FIT */
+
+.sobre {
+    padding: 80px 7%;
+    text-align: center;
+    background-color: #111111;
+}
+
+.sobre h2 {
+    font-size: 35px;
+    margin-bottom: 25px;
+}
+
+.sobre h2 span {
+    color: #f5c400;
+}
+
+.sobre > p {
+    max-width: 700px;
+    margin: 0 auto 40px;
+    color: #cccccc;
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+.diferenciais {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.item {
+    background-color: #1c1c1c;
+    border: 1px solid #f5c400;
+    border-radius: 10px;
+    padding: 30px 20px;
+    max-width: 280px;
+    flex: 1 1 220px;
+}
+
+.item h3 {
+    color: #f5c400;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.item p {
+    color: #cccccc;
+    line-height: 1.6;
+}
+/* MODALIDADES */
+
+.modalidades {
+    padding: 80px 7%;
+    text-align: center;
+    background-color: #080808;
+}
+
+.modalidades h2 {
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+.modalidades h2 span {
+    color: #f5c400;
+}
+
+.subtitulo {
+    color: #cccccc;
+    margin-bottom: 45px;
+}
+
+.cards-modalidades {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.card-modalidade {
+    background-color: #1c1c1c;
+    border: 1px solid #f5c400;
+    border-radius: 10px;
+    padding: 30px 25px;
+    max-width: 320px;
+    flex: 1 1 250px;
+    text-align: left;
+    transition: 0.3s;
+}
+
+.card-modalidade:hover {
+    transform: translateY(-5px);
+    border-color: white;
+}
+
+.card-modalidade h3 {
+    color: #f5c400;
+    font-size: 22px;
+    margin-bottom: 18px;
+}
+
+.card-modalidade p {
+    color: #cccccc;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.card-modalidade ul {
+    padding-left: 20px;
+    color: white;
+    line-height: 2;
+}
+/* PLANOS E PREÇOS */
+
+.planos {
+    padding: 80px 7%;
+    text-align: center;
+    background-color: #111111;
+}
+
+.planos h2 {
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+.planos h2 span {
+    color: #f5c400;
+}
+
+.cards-planos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.card-plano {
+    background-color: #1c1c1c;
+    border: 1px solid #f5c400;
+    border-radius: 10px;
+    padding: 35px 25px;
+    max-width: 300px;
+    flex: 1 1 230px;
+}
+
+.card-plano h3 {
+    color: white;
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.preco {
+    color: #f5c400;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.periodo {
+    color: #cccccc;
+    margin-bottom: 25px;
+}
+
+.card-plano ul {
+    list-style: none;
+    color: white;
+    line-height: 2.2;
+    margin-bottom: 25px;
+}
+
+.card-plano li::before {
+    content: "✓ ";
+    color: #f5c400;
+    font-weight: bold;
+}
+
+.botao-plano {
+    display: inline-block;
+    background-color: #f5c400;
+    color: #080808;
+    padding: 12px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.botao-plano:hover {
+    background-color: white;
+}
+
+.card-plano.destaque {
+    border: 2px solid white;
+    transform: scale(1.04);
+}
+
+.aviso-planos {
+    color: #999999;
+    font-size: 12px;
+    margin-top: 30px;
+}
+/* CONTRATO E REGULAMENTO */
+
+.contrato {
+    padding: 80px 7%;
+    text-align: center;
+    background-color: #080808;
+}
+
+.contrato h2 {
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+.contrato h2 span {
+    color: #f5c400;
+}
+
+.conteudo-contrato {
+    max-width: 850px;
+    margin: 40px auto;
+    text-align: left;
+}
+
+.regra {
+    background-color: #1c1c1c;
+    border-left: 4px solid #f5c400;
+    border-radius: 6px;
+    padding: 25px;
+    margin-bottom: 20px;
+}
+
+.regra h3 {
+    color: #f5c400;
+    margin-bottom: 12px;
+    font-size: 19px;
+}
+
+.regra p {
+    color: #cccccc;
+    line-height: 1.7;
+}
+
+.aviso-contrato {
+    color: #999999;
+    font-size: 12px;
+    margin-top: 25px;
+}
+
+#horarios {
+    padding: 70px 20px;
+    text-align: center;
+    background: #111;
+}
+
+#horarios h2 {
+    color: #d4af37;
+    margin-bottom: 30px;
+}
+
+.horario-card {
+    max-width: 450px;
+    margin: auto;
+    padding: 30px;
+    border: 1px solid #d4af37;
+    border-radius: 12px;
+    background: #1b1b1b;
+}
+
+.horario-card h3 {
+    color: #d4af37;
+    margin-top: 15px;
+}
+
+.horario-card p {
+    color: white;
+    font-size: 18px;
+}
+
+#inscricao {
+    padding: 70px 20px;
+    background: #111;
+    text-align: center;
+}
+
+#inscricao h2 {
+    color: #d4af37;
+    margin-bottom: 15px;
+}
+
+#form-inscricao {
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 25px;
+    background: #1b1b1b;
+    border: 1px solid #d4af37;
+    border-radius: 12px;
+    text-align: left;
+}
+
+#form-inscricao label {
+    display: block;
+    color: #d4af37;
+    margin-top: 15px;
+}
+
+#form-inscricao input,
+#form-inscricao select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    background: #292929;
+    color: white;
+    border: 1px solid #555;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+#form-inscricao button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 25px;
+    background: #d4af37;
+    color: black;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#mensagem-inscricao {
+    color: #d4af37;
+    font-weight: bold;
+}
+
+#inscricao small {
+    color: #aaa;
+}
+
+#contato {
+    padding: 70px 20px;
+    background: #0c0c0c;
+    text-align: center;
+}
+
+#contato h2 {
+    color: #d4af37;
+    margin-bottom: 20px;
+}
+
+#contato h2 span {
+    color: white;
+}
+
+.contato-card {
+    max-width: 550px;
+    margin: 30px auto;
+    padding: 25px;
+    background: #1b1b1b;
+    border: 1px solid #d4af37;
+    border-radius: 12px;
+}
+
+.contato-item {
+    padding: 15px;
+    border-bottom: 1px solid #444;
+}
+
+.contato-item:last-child {
+    border-bottom: none;
+}
+
+.contato-item h3 {
+    color: #d4af37;
+}
+
+.contato-item p {
+    color: white;
+}
+
+.aviso-contato {
+    color: #999;
+    font-size: 12px;
+}
