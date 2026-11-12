@@ -552,3 +552,21 @@ footer {
     color: #999;
     font-size: 12px;
 }
+
+.botao-plano {
+    display: inline-block;
+    padding: 14px 30px;
+    background-color: #f1c40f;
+    color: #111 !important;
+    text-decoration: none !important;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 2px solid #f1c40f;
+    transition: 0.3s;
+}
+
+.botao-plano:hover {
+    background-color: transparent;
+    color: #f1c40f !important;
+}
