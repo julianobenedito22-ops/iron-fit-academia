@@ -553,10 +553,12 @@ footer {
     font-size: 12px;
 }
 
-.botao-plano {
+a.botao-plano,
+a.botao-plano:link,
+a.botao-plano:visited {
     display: inline-block;
     padding: 14px 30px;
-    background-color: #f1c40f;
+    background: #f1c40f !important;
     color: #111 !important;
     text-decoration: none !important;
     font-weight: bold;
@@ -566,7 +568,7 @@ footer {
     transition: 0.3s;
 }
 
-.botao-plano:hover {
-    background-color: transparent;
+a.botao-plano:hover {
+    background: transparent !important;
     color: #f1c40f !important;
 }
