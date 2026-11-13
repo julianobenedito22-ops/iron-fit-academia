@@ -5,406 +5,578 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Iron Fit Academia</title>
-
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
     <header>
-        <div class="logo">
-            IRON<span>FIT</span>
-            <small>ACADEMIA</small>
-        </div>
+        <div class="logo">IRON <span>FIT</span></div>
 
         <nav>
             <a href="#inicio">Início</a>
             <a href="#modalidades">Modalidades</a>
             <a href="#planos">Planos</a>
-            <a href="#contrato">Contrato</a>
-          
-<a href="#horarios">Horários</a>
-<a href="#contato">Contato</a>
+            <a href="#informacoes">Informações</a>
+            <a href="#inscricao">Inscrição</a>
+            <a href="#cancelamento">Cancelamento</a>
+            <a href="#contato">Contato</a>
         </nav>
     </header>
 
-    <main id="inicio">
+    <main>
 
-        <section class="hero">
+        <!-- INÍCIO -->
+        <section id="inicio" class="inicio">
+            <div class="inicio-conteudo">
+                <h1>SUPERE SEUS <span>LIMITES!</span></h1>
+                <p>
+                    Transforme sua rotina, cuide da sua saúde e descubra
+                    sua força na Iron Fit Academia.
+                </p>
+                <a href="#planos" class="botao">CONHEÇA NOSSOS PLANOS</a>
+            </div>
 
-            <h1>
-                SUPERE SEUS
-                <span>LIMITES!</span>
-            </h1>
-
-            <p>
-                Bem-vindo à Iron Fit Academia!
-                Aqui você encontra estrutura,
-                dedicação e motivação para treinar.
-            </p>
-<img src="iron-fit-banner.jpg"
-     alt="Banner da Iron Fit Academia">
-            <a href="#planos" class="botao">
-                CONHEÇA NOSSOS PLANOS
-            </a>
-
+            <img src="iron-fit-banner.jpg" alt="Estrutura da Iron Fit Academia">
         </section>
 
-<section id="sobre" class="sobre">
+        <!-- SOBRE -->
+        <section id="sobre">
+            <h2>CONHEÇA A <span>IRON FIT</span></h2>
 
-    <h2>CONHEÇA A <span>IRON FIT</span></h2>
+            <p>
+                A Iron Fit é uma academia criada para incentivar a prática
+                de atividades físicas, promover saúde e qualidade de vida.
+                Nosso objetivo é oferecer um ambiente moderno, motivador
+                e acolhedor, com equipamentos de qualidade e profissionais
+                preparados para acompanhar nossos alunos.
+            </p>
+        </section>
 
-    <p>
-        A Iron Fit Academia foi criada para quem busca
-        qualidade de vida, saúde e superação.
-        Nosso objetivo é oferecer um ambiente
-        confortável e preparado para seus treinos.
-    </p>
+        <!-- MODALIDADES -->
+        <section id="modalidades">
+            <h2>NOSSAS <span>MODALIDADES</span></h2>
 
-    <div class="diferenciais">
+            <p class="subtitulo">
+                Escolha uma modalidade para conhecer seus benefícios.
+            </p>
 
-        <div class="item">
-            <h3>🏋️ Equipamentos modernos</h3>
-            <p>Estrutura preparada para seus treinos.</p>
+            <div class="modalidades-container">
+
+                <div class="modalidade-card">
+                    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=700" alt="Musculação">
+                    <h3>Musculação</h3>
+                    <p>Treinamento com pesos e aparelhos.</p>
+                    <button onclick="abrirModal('musculacao')">SAIBA MAIS</button>
+                </div>
+
+                <div class="modalidade-card">
+                    <img src="https://images.unsplash.com/photo-1538805060514-97d9cc17730c?w=700" alt="Cardio">
+                    <h3>Cardio</h3>
+                    <p>Atividades para melhorar o condicionamento.</p>
+                    <button onclick="abrirModal('cardio')">SAIBA MAIS</button>
+                </div>
+
+                <div class="modalidade-card">
+                    <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=700" alt="Treinamento funcional">
+                    <h3>Funcional</h3>
+                    <p>Movimentos que trabalham o corpo todo.</p>
+                    <button onclick="abrirModal('funcional')">SAIBA MAIS</button>
+                </div>
+
+                <div class="modalidade-card">
+                    <img src="https://images.unsplash.com/photo-1504609813442-a8924e83f76e?w=700" alt="Dança">
+                    <h3>Dança</h3>
+                    <p>Exercícios com música e movimento.</p>
+                    <button onclick="abrirModal('danca')">SAIBA MAIS</button>
+                </div>
+
+                <div class="modalidade-card">
+                    <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=700" alt="Pilates">
+                    <h3>Pilates</h3>
+                    <p>Controle corporal, equilíbrio e flexibilidade.</p>
+                    <button onclick="abrirModal('pilates')">SAIBA MAIS</button>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- JANELA DAS MODALIDADES -->
+        <div id="modalModalidade" class="modal">
+            <div class="modal-conteudo">
+                <button class="fechar" onclick="fecharModal()">&times;</button>
+                <img id="modalImagem" src="" alt="">
+                <h2 id="modalTitulo"></h2>
+                <p id="modalDescricao"></p>
+                <h3>Benefícios</h3>
+                <p id="modalBeneficios"></p>
+                <h3>Exemplos de atividades</h3>
+                <p id="modalExemplos"></p>
+            </div>
         </div>
 
-        <div class="item">
-            <h3>⭐ Profissionais qualificados</h3>
-            <p>Orientação e acompanhamento durante os treinos.</p>
-        </div>
+        <!-- PLANOS -->
+        <section id="planos">
+            <h2>NOSSOS <span>PLANOS</span></h2>
 
-        <div class="item">
-            <h3>💪 Ambiente motivador</h3>
-            <p>Um espaço para buscar seus objetivos.</p>
-        </div>
+            <p class="subtitulo">
+                Escolha a duração e a categoria de serviço que combinam
+                com seus objetivos.
+            </p>
 
-    </div>
+            <div class="planos-container">
 
-</section>
-<section id="modalidades" class="modalidades">
+                <div class="plano-card">
+                    <h3>BÁSICO</h3>
+                    <p class="plano-descricao">
+                        Acesso às modalidades e aos equipamentos da academia.
+                    </p>
+                    <ul>
+                        <li>Musculação</li>
+                        <li>Cardio</li>
+                        <li>Treinamento funcional</li>
+                        <li>Uso dos equipamentos</li>
+                    </ul>
+                </div>
 
-    <h2>NOSSAS <span>MODALIDADES</span></h2>
+                <div class="plano-card destaque">
+                    <h3>PREMIUM</h3>
+                    <p class="plano-descricao">
+                        Tudo do Básico, com acompanhamento de personal trainer
+                        em sessões programadas.
+                    </p>
+                    <ul>
+                        <li>Todos os benefícios do Básico</li>
+                        <li>Sessões com personal trainer</li>
+                        <li>Acompanhamento de treino</li>
+                    </ul>
+                </div>
+
+                <div class="plano-card">
+                    <h3>ELITE</h3>
+                    <p class="plano-descricao">
+                        Uma experiência mais completa de acompanhamento.
+                    </p>
+                    <ul>
+                        <li>Todos os benefícios do Premium</li>
+                        <li>Acompanhamento de personal durante o treino</li>
+                        <li>Orientação com nutricionista</li>
+                        <li>Avaliações e orientações individuais</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="calculadora-plano">
+                <h3>CALCULE SEU PLANO</h3>
+
+                <label for="duracao">Duração:</label>
+                <select id="duracao" onchange="atualizarPreco()">
+                    <option value="mensal">Mensal</option>
+                    <option value="trimestral">Trimestral</option>
+                    <option value="anual">Anual</option>
+                </select>
+
+                <label for="categoria">Categoria:</label>
+                <select id="categoria" onchange="atualizarPreco()">
+                    <option value="basico">Básico</option>
+                    <option value="premium">Premium</option>
+                    <option value="elite">Elite</option>
+                </select>
+
+                <div class="preco-area">
+                    <p>Valor do plano:</p>
+                    <h2 id="precoAtual">R$ 69,90</h2>
+                </div>
+
+                <a href="#inscricao" class="botao" onclick="preencherPlano()">
+                    ESCOLHER ESTE PLANO
+                </a>
+            </div>
+        </section>
+
+        <!-- INFORMAÇÕES -->
+        <section id="informacoes">
+            <h2>INFORMAÇÕES DA <span>ACADEMIA</span></h2>
+
+            <div class="informacoes-container">
+
+                <div class="informacao-card">
+                    <h3>Horários de funcionamento</h3>
+                    <p>Segunda a sexta: 06h às 22h.</p>
+                    <p>Sábados e domingos: fechado.</p>
+                </div>
+
+                <div class="informacao-card">
+                    <h3>Matrícula</h3>
+                    <p>
+                        A inscrição pode ser realizada pelo formulário
+                        disponível no site ou diretamente na recepção.
+                    </p>
+                </div>
+
+                <div class="informacao-card">
+                    <h3>Formas de pagamento</h3>
+                    <p>PIX, cartão de crédito, cartão de débito ou dinheiro.</p>
+                    <p>Os pagamentos deste site são apenas demonstrativos.</p>
+                </div>
+
+                <div class="informacao-card">
+                    <h3>Uso dos equipamentos</h3>
+                    <p>
+                        Utilize os equipamentos corretamente, respeite
+                        as orientações dos profissionais e guarde os
+                        materiais após o uso.
+                    </p>
+                </div>
+
+                <div class="informacao-card">
+                    <h3>Respeito e convivência</h3>
+                    <p>
+                        Respeite os outros alunos, os profissionais
+                        e as regras de convivência da academia.
+                    </p>
+                </div>
+
+                <div class="informacao-card">
+                    <h3>Cancelamento e atendimento</h3>
+                    <p>
+                        Para informações sobre cancelamento, renovação
+                        ou dúvidas sobre os serviços, procure a recepção.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- INSCRIÇÃO -->
+        <section id="inscricao">
+            <h2>FAÇA SUA <span>INSCRIÇÃO</span></h2>
+
+            <p class="subtitulo">
+                Preencha seus dados para realizar uma inscrição demonstrativa.
+            </p>
+
+            <form id="formInscricao">
+
+                <label for="nome">Nome completo:</label>
+                <input type="text" id="nome" required placeholder="Digite seu nome">
+
+                <label for="idade">Idade:</label>
+                <input type="number" id="idade" min="1" max="120" required placeholder="Sua idade">
+
+                <label for="telefone">Telefone:</label>
+                <input type="tel" id="telefone" required placeholder="(00) 00000-0000">
+
+                <label for="duracaoInscricao">Duração do plano:</label>
+                <select id="duracaoInscricao" required>
+                    <option value="mensal">Mensal</option>
+                    <option value="trimestral">Trimestral</option>
+                    <option value="anual">Anual</option>
+                </select>
+
+                <label for="categoriaInscricao">Categoria:</label>
+                <select id="categoriaInscricao" required>
+                    <option value="basico">Básico</option>
+                    <option value="premium">Premium</option>
+                    <option value="elite">Elite</option>
+                </select>
+
+                <label for="modalidadeInscricao">Modalidade de interesse:</label>
+                <select id="modalidadeInscricao" required>
+                    <option value="">Selecione uma modalidade</option>
+                    <option>Musculação</option>
+                    <option>Cardio</option>
+                    <option>Treinamento funcional</option>
+                    <option>Dança</option>
+                    <option>Pilates</option>
+                    <option>Todas as modalidades</option>
+                </select>
+
+                <label for="pagamento">Forma de pagamento:</label>
+                <select id="pagamento" required>
+                    <option value="">Selecione uma forma de pagamento</option>
+                    <option value="pix">PIX</option>
+                    <option value="credito">Cartão de crédito</option>
+                    <option value="debito">Cartão de débito</option>
+                    <option value="dinheiro">Dinheiro</option>
+                </select>
+
+                <div class="resumo-inscricao">
+                    <p>Valor selecionado:</p>
+                    <h3 id="precoInscricao">R$ 69,90</h3>
+                </div>
+
+                <button type="submit" class="botao">
+                    FINALIZAR INSCRIÇÃO
+                </button>
+
+            </form>
+
+            <p id="mensagemSucesso"></p>
+        </section>
+      
+<!-- CANCELAMENTO DE MATRÍCULA -->
+<section id="cancelamento">
+
+    <h2>CANCELAMENTO DE <span>MATRÍCULA</span></h2>
 
     <p class="subtitulo">
-        Escolha a modalidade que combina com seus objetivos!
+        Preencha os dados abaixo para solicitar o cancelamento.
     </p>
 
-    <div class="cards-modalidades">
+    <form id="formCancelamento">
 
-        <div class="card-modalidade">
-            <h3>🏋️ Musculação</h3>
-            <p>
-                Treinamento com pesos e equipamentos
-                para trabalhar diferentes grupos musculares.
-            </p>
-            <ul>
-                <li>Costas</li>
-                <li>Bíceps</li>
-                <li>Tríceps</li>
-                <li>Pernas</li>
-            </ul>
-        </div>
+        <label for="nomeCancelamento">Nome completo:</label>
+        <input type="text" id="nomeCancelamento"
+            required placeholder="Digite seu nome">
 
-        <div class="card-modalidade">
-            <h3>🏃 Cardio</h3>
-            <p>
-                Atividades que trabalham a resistência
-                cardiovascular e ajudam no condicionamento físico.
-            </p>
-            <ul>
-                <li>Esteira</li>
-                <li>Bicicleta ergométrica</li>
-                <li>Transport</li>
-                <li>Corrida</li>
-            </ul>
-        </div>
+        <label for="telefoneCancelamento">Telefone cadastrado:</label>
+        <input type="tel" id="telefoneCancelamento"
+            required placeholder="(00) 00000-0000">
 
-        <div class="card-modalidade">
-            <h3>🔥 Treinamento Funcional</h3>
-            <p>
-                Exercícios que desenvolvem capacidades
-                físicas por meio de movimentos variados.
-            </p>
-            <ul>
-                <li>Agachamentos</li>
-                <li>Exercícios de equilíbrio</li>
-                <li>Movimentos com cones</li>
-                <li>Exercícios com elásticos</li>
-            </ul>
-        </div>
+        <label for="planoCancelamento">Plano contratado:</label>
+        <select id="planoCancelamento" required>
+            <option value="">Selecione seu plano</option>
+            <option>Básico Mensal</option>
+            <option>Básico Trimestral</option>
+            <option>Básico Anual</option>
+            <option>Premium Mensal</option>
+            <option>Premium Trimestral</option>
+            <option>Premium Anual</option>
+            <option>Elite Mensal</option>
+            <option>Elite Trimestral</option>
+            <option>Elite Anual</option>
+        </select>
 
-<div class="card-modalidade">
-    <h3>💃 Dança</h3>
-    <p>
-        Aulas coletivas com música e coreografias
-        para estimular o movimento, a coordenação
-        e a diversão.
-    </p>
-    <ul>
-        <li>Dança fitness</li>
-        <li>Coreografias</li>
-        <li>Ritmos variados</li>
-    </ul>
-</div>
+        <label for="motivoCancelamento">Motivo (opcional):</label>
+        <textarea id="motivoCancelamento"
+            placeholder="Conte o motivo do cancelamento"></textarea>
 
-<div class="card-modalidade">
-    <h3>🧘 Pilates</h3>
-    <p>
-        Aulas voltadas ao fortalecimento,
-        equilíbrio, postura e flexibilidade.
-    </p>
-    <ul>
-        <li>Exercícios de postura</li>
-        <li>Controle corporal</li>
-        <li>Alongamentos</li>
-    </ul>
-</div>
+        <button type="submit" class="botao">
+            SOLICITAR CANCELAMENTO
+        </button>
 
-    </div>
+    </form>
+
+    <p id="mensagemCancelamento"></p>
 
 </section>
-      <!-- PLANOS E PREÇOS -->
 
-<section id="planos" class="planos">
+        <!-- JANELA DE PAGAMENTO -->
+        <div id="modalPagamento" class="modal">
+            <div class="modal-conteudo pagamento-conteudo">
+                <button class="fechar" onclick="fecharPagamento()">&times;</button>
 
-    <h2>NOSSOS <span>PLANOS</span></h2>
+                <h2>FINALIZAÇÃO DO <span>PAGAMENTO</span></h2>
 
-    <p class="subtitulo">
-        Escolha o plano ideal para você!
-    </p>
+                <p id="mensagemPagamento"></p>
 
-    <div class="cards-planos">
+                <div id="areaPagamento"></div>
 
-        <div class="card-plano">
-            <h3>Plano Mensal</h3>
-            <p class="preco">R$ 69,90</p>
-            <p class="periodo">por mês</p>
+                <p class="aviso-demo">
+                    Demonstração escolar: nenhuma cobrança real será realizada.
+                    Não informe dados bancários ou números de cartão.
+                </p>
 
-            <ul>
-                <li>Acesso à musculação</li>
-                <li>Acesso ao cardio</li>
-                <li>Treinamento funcional</li>
-            </ul>
-<a href="#inscricao" class="botao-plano"
-onclick="document.getElementById('plano').value='Mensal'"
-style="display:inline-block; padding:14px 30px; background:#f1c40f; color:#111; text-decoration:none; font-weight:bold; border-radius:8px; border:2px solid #f1c40f;">
-ESCOLHER PLANO
-</a>
+                <button type="button" class="botao" onclick="simularPagamento()">
+                    SIMULAR PAGAMENTO
+                </button>
+
+                <p id="resultadoPagamento"></p>
+            </div>
         </div>
 
-        <div class="card-plano destaque">
-            <h3>Plano Trimestral</h3>
-            <p class="preco">R$ 189,90</p>
-            <p class="periodo">por 3 meses</p>
+        <!-- CONTATO -->
+        <section id="contato">
+            <h2>ENTRE EM <span>CONTATO</span></h2>
 
-            <ul>
-                <li>Acesso à musculação</li>
-                <li>Acesso ao cardio</li>
-                <li>Treinamento funcional</li>
-            </ul>
-<a href="#inscricao" class="botao-plano"
-onclick="document.getElementById('plano').value='Trimestral'"
-style="display:inline-block; padding:14px 30px; background:#f1c40f; color:#111; text-decoration:none; font-weight:bold; border-radius:8px; border:2px solid #f1c40f;">
-ESCOLHER PLANO
-</a>
-        </div>
+            <p>Telefone: (00) 00000-0000</p>
+            <p>Instagram: @ironfit.academia</p>
+            <p>Endereço: Rua Exemplo, 100 - Centro</p>
 
-        <div class="card-plano">
-            <h3>Plano Anual</h3>
-            <p class="preco">R$ 299,90 </p>
-            <p class="periodo">por 12 meses</p>
-
-            <ul>
-                <li>Acesso à musculação</li>
-                <li>Acesso ao cardio</li>
-                <li>Treinamento funcional</li>
-            </ul>
-<a href="#inscricao" class="botao-plano"
-onclick="document.getElementById('plano').value='Anual'"
-style="display:inline-block; padding:14px 30px; background:#f1c40f; color:#111; text-decoration:none; font-weight:bold; border-radius:8px; border:2px solid #f1c40f;">
-ESCOLHER PLANO
-</a>
-        </div>
-
-    </div>
-
-    <p class="aviso-planos">
-        *Valores fictícios para o projeto escolar.
-    </p>
-
-</section>
-      <!-- CONTRATO -->
-
-<section id="contrato" class="contrato">
-
-    <h2>CONTRATO E <span>REGULAMENTO</span></h2>
-
-    <p class="subtitulo">
-        Conheça as condições para fazer parte da Iron Fit!
-    </p>
-
-    <div class="conteudo-contrato">
-
-        <div class="regra">
-            <h3>📋 1. Planos e pagamentos</h3>
-            <p>
-                O aluno deverá escolher um dos planos disponíveis
-                e realizar o pagamento conforme o período contratado.
+            <p class="aviso-demo">
+                Informações fictícias utilizadas neste projeto escolar.
             </p>
-        </div>
+        </section>
 
-        <div class="regra">
-            <h3>📅 2. Duração dos planos</h3>
-            <p>
-                O plano mensal tem duração de 1 mês,
-                o trimestral de 3 meses e o anual de 12 meses.
-            </p>
-        </div>
-
-        <div class="regra">
-            <h3>🏋️ 3. Uso dos equipamentos</h3>
-            <p>
-                Os equipamentos devem ser utilizados corretamente,
-                respeitando as orientações dos profissionais.
-            </p>
-        </div>
-
-        <div class="regra">
-            <h3>🤝 4. Respeito e convivência</h3>
-            <p>
-                Todos os alunos devem respeitar os funcionários,
-                profissionais e demais frequentadores da academia.
-            </p>
-        </div>
-
-        <div class="regra">
-            <h3>❌ 5. Cancelamento</h3>
-            <p>
-                Para solicitar o cancelamento, o aluno deverá
-                entrar em contato com a administração da academia
-                e verificar as condições do plano contratado.
-            </p>
-        </div>
-
-    </div>
-
-    <p class="aviso-contrato">
-        Este regulamento é um modelo fictício para o projeto escolar.
-    </p>
-
-</section>
     </main>
 
-<section id="horarios">
-    <div class="container">
-        <h2>HORÁRIO DE FUNCIONAMENTO</h2>
-
-        <div class="horario-card">
-            <h3>Segunda a sexta</h3>
-            <p>06:00 às 22:00</p>
-
-            <h3>Sábado e domingo</h3>
-            <p>Fechado</p>
-        </div>
-    </div>
-</section>
-
-<section id="inscricao">
-    <div class="container">
-        <h2>INSCREVA-SE NA IRON FIT</h2>
-        <p>Preencha o formulário e escolha o plano ideal para você!</p>
-
-        <form id="form-inscricao">
-            <label>Nome completo:</label>
-            <input type="text" placeholder="Digite seu nome" required>
-
-            <label>Idade:</label>
-            <input type="number" placeholder="Sua idade" required>
-
-            <label>Telefone:</label>
-            <input type="tel" placeholder="(00) 00000-0000" required>
-
-            <label>Escolha seu plano:</label>
-            
-<select id="plano" name="plano" required>
-    <option value="">Selecione um plano</option>
-    <option value="Mensal">Mensal - R$ 69,90</option>
-    <option value="Trimestral">Trimestral - R$ 189,90</option>
-    <option value="Anual">Anual - R$ 299,90</option>
-</select>
-
-
-            <label>Modalidade de interesse:</label>
-            <select required>
-                <option value="">Selecione uma modalidade</option>
-                <option>Musculação</option>
-                <option>Cardio</option>
-                <option>Treinamento Funcional</option>
-                <option>Dança</option>
-                <option>Pilates</option>
-            </select>
-
-            <button type="submit">Enviar inscrição</button>
-        </form>
-
-        <p id="mensagem-inscricao"></p>
-        <small>Formulário demonstrativo. Nenhum dado será enviado ou armazenado.</small>
-    </div>
-</section>
-
-<section id="contato">
-    <div class="container">
-
-        <h2>FALE <span>CONOSCO</span></h2>
-
-        <p>
-            Entre em contato com a Iron Fit Academia
-            e conheça melhor nossos serviços!
-        </p>
-
-        <div class="contato-card">
-
-            <div class="contato-item">
-                <h3>📞 Telefone</h3>
-                <p>(00) 00000-0000</p>
-            </div>
-
-            <div class="contato-item">
-                <h3>📸 Instagram</h3>
-                <p>@ironfit.academia</p>
-            </div>
-
-            <div class="contato-item">
-                <h3>📍 Localização</h3>
-                <p>Endereço fictício - Projeto escolar</p>
-            </div>
-
-        </div>
-
-        <p class="aviso-contato">
-            Informações fictícias para fins educativos.
-        </p>
-
-    </div>
-</section>
-
     <footer>
-        <p>© 2026 Iron Fit Academia</p>
-        <p>Todos os direitos reservados.</p>
-    </footer>
-<script>
-const formulario = document.getElementById("form-inscricao");
-const mensagem = document.getElementById("mensagem-inscricao");
+        <p>&copy; 2026 Iron Fit Academia. Todos os direitos reservados.</p>
+        <p>Projeto demonstrativo de empreendedorismo.</p>
+      </footer>
 
-formulario.addEventListener("submit", function(event) {
+<script>
+
+const precos = {
+    mensal: {
+        basico: 69.90,
+        premium: 109.90,
+        elite: 159.90
+    },
+    trimestral: {
+        basico: 189.90,
+        premium: 289.90,
+        elite: 429.90
+    },
+    anual: {
+        basico: 299.90,
+        premium: 599.90,
+        elite: 999.90
+    }
+};
+        function formatarPreco(valor) {
+            return valor.toLocaleString("pt-BR", {
+                style: "currency",
+                currency: "BRL"
+            });
+        }
+
+        function obterPreco(duracao, categoria) {
+            return precos[duracao][categoria];
+        }
+
+        function atualizarPreco() {
+            const duracao = document.getElementById("duracao").value;
+            const categoria = document.getElementById("categoria").value;
+
+            const preco = obterPreco(duracao, categoria);
+
+            document.getElementById("precoAtual").textContent = formatarPreco(preco);
+        }
+
+        function preencherPlano() {
+            const duracao = document.getElementById("duracao").value;
+            const categoria = document.getElementById("categoria").value;
+
+            document.getElementById("duracaoInscricao").value = duracao;
+            document.getElementById("categoriaInscricao").value = categoria;
+
+            atualizarPrecoInscricao();
+        }
+
+        function atualizarPrecoInscricao() {
+            const duracao = document.getElementById("duracaoInscricao").value;
+            const categoria = document.getElementById("categoriaInscricao").value;
+
+            const preco = obterPreco(duracao, categoria);
+
+            document.getElementById("precoInscricao").textContent = formatarPreco(preco);
+        }
+
+        document.getElementById("duracaoInscricao").addEventListener("change", atualizarPrecoInscricao);
+        document.getElementById("categoriaInscricao").addEventListener("change", atualizarPrecoInscricao);
+
+        // INSCRIÇÃO E PAGAMENTO DEMONSTRATIVO
+
+        let pagamentoAtual = "";
+
+        document.getElementById("formInscricao").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const nome = document.getElementById("nome").value;
+            const duracao = document.getElementById("duracaoInscricao").value;
+            const categoria = document.getElementById("categoriaInscricao").value;
+            const pagamento = document.getElementById("pagamento").value;
+
+            const preco = obterPreco(duracao, categoria);
+
+            pagamentoAtual = pagamento;
+
+            document.getElementById("mensagemSucesso").textContent =
+                "Inscrição demonstrativa preenchida com sucesso, " + nome + "!";
+
+            document.getElementById("mensagemPagamento").textContent =
+                "Plano " + categoria.toUpperCase() + " (" + duracao + ") - " + formatarPreco(preco);
+
+            document.getElementById("resultadoPagamento").textContent = "";
+
+            const area = document.getElementById("areaPagamento");
+
+            if (pagamento === "pix") {
+                area.innerHTML = `
+                    <h3>Pagamento via PIX</h3>
+                    <div class="pix-demonstrativo">
+                        <p>QR CODE FICTÍCIO</p>
+                        <div class="qr-falso">DEMO</div>
+                    </div>
+                    <p>Código demonstrativo: IRONFIT-PIX-NAO-VALIDO</p>
+                `;
+            }
+
+            else if (pagamento === "credito") {
+                area.innerHTML = `
+                    <h3>Cartão de crédito</h3>
+                    <p>Pagamento de demonstração no cartão de crédito.</p>
+                    <p>Nenhum dado de cartão será solicitado.</p>
+                `;
+            }
+
+            else if (pagamento === "debito") {
+                area.innerHTML = `
+                    <h3>Cartão de débito</h3>
+                    <p>Pagamento de demonstração no cartão de débito.</p>
+                    <p>Nenhum dado de cartão será solicitado.</p>
+                `;
+            }
+
+            else {
+                area.innerHTML = `
+                    <h3>Pagamento em dinheiro</h3>
+                    <p>Em uma academia real, o pagamento seria realizado na recepção.</p>
+                    <p>Esta etapa é apenas uma simulação.</p>
+                `;
+            }
+
+            document.getElementById("modalPagamento").style.display = "flex";
+        });
+
+        function simularPagamento() {
+            document.getElementById("resultadoPagamento").textContent =
+                "Pagamento demonstrativo aprovado! Nenhum dinheiro foi transferido.";
+        }
+
+        function fecharPagamento() {
+            document.getElementById("modalPagamento").style.display = "none";
+        }
+
+        // FECHAR JANELAS AO CLICAR FORA DELAS
+
+        window.addEventListener("click", function(event) {
+            const modalModalidade = document.getElementById("modalModalidade");
+            const modalPagamento = document.getElementById("modalPagamento");
+
+            if (event.target === modalModalidade) {
+                fecharModal();
+            }
+
+            if (event.target === modalPagamento) {
+                fecharPagamento();
+            }
+        });
+
+        // PREÇO INICIAL
+
+        atualizarPreco();
+        atualizarPrecoInscricao();
+
+// CANCELAMENTO DE MATRÍCULA
+
+document.getElementById("formCancelamento").addEventListener("submit", function(event) {
     event.preventDefault();
 
-    mensagem.textContent = "Inscrição realizada com sucesso! Obrigado por conhecer a Iron Fit Academia!";
+    const nome = document.getElementById("nomeCancelamento").value;
 
-    formulario.reset();
+    document.getElementById("mensagemCancelamento").textContent =
+        "Solicitação demonstrativa registrada, " + nome +
+        "! Nossa equipe entraria em contato para confirmar o cancelamento.";
+
+    document.getElementById("formCancelamento").reset();
 });
-</script>
+
+    </script>
+
 </body>
 </html>
