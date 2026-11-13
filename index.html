@@ -575,7 +575,71 @@ document.getElementById("formCancelamento").addEventListener("submit", function(
 
     document.getElementById("formCancelamento").reset();
 });
+// DADOS DAS MODALIDADES
 
+const modalidades = {
+    musculacao: {
+        titulo: "Musculação",
+        imagem: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=700",
+        descricao: "Treinamento realizado com pesos e aparelhos para desenvolver força e resistência.",
+        beneficios: "Fortalecimento muscular, melhora da resistência e desenvolvimento da coordenação.",
+        exemplos: "Supino, agachamento, remada, rosca direta e exercícios em aparelhos."
+    },
+
+    cardio: {
+        titulo: "Cardio",
+        imagem: "https://images.unsplash.com/photo-1538805060514-97d9cc17730c?w=700",
+        descricao: "Atividades físicas que estimulam o sistema cardiovascular.",
+        beneficios: "Melhora do condicionamento físico, da resistência e da saúde cardiovascular.",
+        exemplos: "Esteira, bicicleta ergométrica, caminhada e corrida."
+    },
+
+    funcional: {
+        titulo: "Treinamento Funcional",
+        imagem: "https://images.unsplash.com/photo-1518611012118-696072aa579a?w=700",
+        descricao: "Exercícios que trabalham diferentes movimentos e grupos musculares.",
+        beneficios: "Melhora do equilíbrio, coordenação, mobilidade e resistência.",
+        exemplos: "Agachamentos, saltos, exercícios com cones e movimentos com peso corporal."
+    },
+
+    danca: {
+        titulo: "Dança",
+        imagem: "https://images.unsplash.com/photo-1504609813442-a8924e83f76e?w=700",
+        descricao: "Atividade física que combina música, ritmo e movimento.",
+        beneficios: "Melhora da coordenação, condicionamento físico e expressão corporal.",
+        exemplos: "Aulas de dança, zumba e coreografias."
+    },
+
+    pilates: {
+        titulo: "Pilates",
+        imagem: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=700",
+        descricao: "Método de exercícios que trabalha controle corporal e respiração.",
+        beneficios: "Melhora da postura, equilíbrio, flexibilidade e consciência corporal.",
+        exemplos: "Exercícios no solo, alongamentos e movimentos com acessórios."
+    }
+};
+
+// ABRIR JANELA
+
+function abrirModal(modalidade) {
+    const dados = modalidades[modalidade];
+
+    if (!dados) return;
+
+    document.getElementById("modalImagem").src = dados.imagem;
+    document.getElementById("modalTitulo").textContent = dados.titulo;
+    document.getElementById("modalDescricao").textContent = dados.descricao;
+    document.getElementById("modalBeneficios").textContent = dados.beneficios;
+    document.getElementById("modalExemplos").textContent = dados.exemplos;
+
+    document.getElementById("modalModalidade").style.display = "flex";
+}
+
+// FECHAR JANELA
+
+function fecharModal() {
+    document.getElementById("modalModalidade").style.display = "none";
+          }
     </script>
 
 </body>
