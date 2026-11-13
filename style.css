@@ -1,574 +1,689 @@
 
-
 /* CONFIGURAÇÕES GERAIS */
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-html {
     scroll-behavior: smooth;
 }
 
 body {
-    background-color: #080808;
+    background: #080808;
     color: #ffffff;
-    font-family: Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+:root {
+    --dourado: #f1c40f;
+    --dourado-claro: #ffe45c;
+    --preto: #080808;
+    --cinza: #151515;
+    --cinza-claro: #222222;
 }
 
 /* CABEÇALHO */
 
 header {
+    width: 100%;
+    min-height: 75px;
+    background: #111111;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 20px 7%;
-    background-color: #111111;
-    border-bottom: 2px solid #f5c400;
+    justify-content: space-between;
+    padding: 15px 7%;
+    border-bottom: 2px solid var(--dourado);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    gap: 20px;
 }
 
 .logo {
-    font-size: 30px;
-    font-weight: bold;
-    color: white;
+    color: #ffffff;
+    font-size: 28px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    white-space: nowrap;
 }
 
 .logo span {
-    color: #f5c400;
+    color: var(--dourado);
 }
-
-.logo small {
-    display: block;
-    font-size: 10px;
-    letter-spacing: 6px;
-    text-align: center;
-}
-
-/* MENU */
 
 nav {
     display: flex;
-    gap: 25px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 nav a {
-    color: white;
+    color: #ffffff;
     text-decoration: none;
-    font-size: 15px;
+    font-size: 14px;
+    font-weight: bold;
     transition: 0.3s;
 }
 
 nav a:hover {
-    color: #f5c400;
+    color: var(--dourado);
 }
 
-/* APRESENTAÇÃO */
+/* TÍTULOS */
 
-.hero {
-    min-height: 650px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+section {
+    padding: 85px 8%;
+    scroll-margin-top: 80px;
+}
+
+h2 {
     text-align: center;
-    padding: 40px 20px;
-
-    background: linear-gradient(
-        135deg,
-        #080808,
-        #242016,
-        #080808
-    );
+    font-size: 32px;
+    margin-bottom: 25px;
+    text-transform: uppercase;
 }
 
-.hero h1 {
-    font-size: 55px;
-    font-weight: 900;
+h2 span,
+h1 span {
+    color: var(--dourado);
 }
 
-.hero h1 span {
-    display: block;
-    color: #f5c400;
-    font-size: 75px;
+.subtitulo {
+    text-align: center;
+    color: #cccccc;
+    margin-bottom: 35px;
 }
 
-.hero p {
-    max-width: 550px;
+/* INÍCIO */
+
+.inicio {
+    min-height: 570px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 45px;
+    background:
+        linear-gradient(120deg, #080808, #191919, #080808);
+}
+
+.inicio-conteudo {
+    flex: 1;
+}
+
+.inicio h1 {
+    font-size: clamp(36px, 5vw, 60px);
+    line-height: 1.15;
+    margin-bottom: 20px;
+}
+
+.inicio p {
     color: #cccccc;
     font-size: 18px;
-    line-height: 1.7;
-    margin: 25px 0;
+    max-width: 500px;
+    margin-bottom: 30px;
 }
 
-/* BOTÃO */
+.inicio img {
+    width: 48%;
+    max-width: 600px;
+    border: 3px solid var(--dourado);
+    border-radius: 15px;
+    box-shadow: 0 0 25px #f1c40f33;
+}
 
-.botao {
+/* BOTÕES */
+
+.botao,
+.modalidade-card button {
     display: inline-block;
-    background-color: #f5c400;
-    color: #080808;
-    padding: 16px 28px;
-    border-radius: 5px;
+    background: var(--dourado);
+    color: #111111;
+    padding: 14px 25px;
+    border: 2px solid var(--dourado);
+    border-radius: 7px;
     text-decoration: none;
+    font-size: 14px;
     font-weight: bold;
+    cursor: pointer;
     transition: 0.3s;
 }
 
-.botao:hover {
-    background-color: white;
-    transform: scale(1.05);
+.botao:hover,
+.modalidade-card button:hover {
+    background: transparent;
+    color: var(--dourado);
+    transform: translateY(-3px);
+}
+
+/* SOBRE */
+
+#sobre {
+    text-align: center;
+    background: #101010;
+}
+
+#sobre p {
+    max-width: 850px;
+    margin: auto;
+    color: #cccccc;
+    font-size: 17px;
+}
+
+/* MODALIDADES */
+
+#modalidades {
+    background: #080808;
+}
+
+.modalidades-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.modalidade-card {
+    background: var(--cinza);
+    border: 1px solid #333333;
+    border-radius: 12px;
+    overflow: hidden;
+    text-align: center;
+    padding-bottom: 25px;
+    transition: 0.3s;
+}
+
+.modalidade-card:hover {
+    border-color: var(--dourado);
+    transform: translateY(-6px);
+    box-shadow: 0 8px 25px #f1c40f20;
+}
+
+.modalidade-card img {
+    width: 100%;
+    height: 175px;
+    object-fit: cover;
+}
+
+.modalidade-card h3 {
+    color: var(--dourado);
+    font-size: 21px;
+    margin: 15px 10px 5px;
+}
+
+.modalidade-card p {
+    color: #cccccc;
+    padding: 0 15px;
+    margin-bottom: 18px;
+    font-size: 14px;
+}
+
+/* JANELAS MODAIS */
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: #000000dc;
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.modal-conteudo {
+    position: relative;
+    background: #171717;
+    border: 2px solid var(--dourado);
+    border-radius: 14px;
+    width: 100%;
+    max-width: 650px;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 0 30px #f1c40f30;
+}
+
+.modal-conteudo > img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 9px;
+    margin-bottom: 15px;
+}
+
+.modal-conteudo h2 {
+    color: var(--dourado);
+    margin-bottom: 15px;
+}
+
+.modal-conteudo h3 {
+    color: var(--dourado);
+    margin: 20px 0 8px;
+}
+
+.modal-conteudo p {
+    color: #dddddd;
+}
+
+.fechar {
+    position: absolute;
+    top: 8px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 35px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.fechar:hover {
+    color: var(--dourado);
+}
+
+/* PLANOS */
+
+#planos {
+    background: #101010;
+}
+
+.planos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 25px;
+}
+
+.plano-card {
+    background: #191919;
+    border: 1px solid #444444;
+    border-radius: 12px;
+    padding: 30px 22px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.plano-card:hover {
+    border-color: var(--dourado);
+    transform: translateY(-5px);
+}
+
+.plano-card.destaque {
+    border: 2px solid var(--dourado);
+    box-shadow: 0 0 20px #f1c40f20;
+}
+
+.plano-card h3 {
+    color: var(--dourado);
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.plano-descricao {
+    color: #cccccc;
+    min-height: 75px;
+    margin-bottom: 15px;
+}
+
+.plano-card ul {
+    list-style: none;
+    text-align: left;
+}
+
+.plano-card li {
+    padding: 9px 0;
+    border-bottom: 1px solid #333333;
+}
+
+.plano-card li::before {
+    content: "✓ ";
+    color: var(--dourado);
+    font-weight: bold;
+}
+
+/* CALCULADORA DE PLANOS */
+
+.calculadora-plano {
+    max-width: 550px;
+    margin: 55px auto 0;
+    padding: 35px;
+    background: #191919;
+    border: 2px solid var(--dourado);
+    border-radius: 12px;
+    text-align: center;
+}
+
+.calculadora-plano h3 {
+    color: var(--dourado);
+    font-size: 24px;
+    margin-bottom: 25px;
+}
+
+.calculadora-plano label,
+#formInscricao label,
+#formCancelamento label {
+    display: block;
+    text-align: left;
+    margin: 15px 0 7px;
+    font-weight: bold;
+}
+
+select,
+input {
+    width: 100%;
+    padding: 13px;
+    background: #252525;
+    border: 1px solid #555555;
+    border-radius: 6px;
+    color: #ffffff;
+    font-size: 15px;
+    outline: none;
+}
+
+select:focus,
+input:focus {
+    border-color: var(--dourado);
+}
+
+.preco-area {
+    margin: 25px 0;
+}
+
+.preco-area p {
+    color: #cccccc;
+}
+
+.preco-area h2 {
+    color: var(--dourado);
+    font-size: 35px;
+    margin: 5px 0;
+}
+
+/* INFORMAÇÕES DA ACADEMIA */
+
+#informacoes {
+    background: #080808;
+}
+
+.informacoes-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.informacao-card {
+    background: #191919;
+    border-left: 4px solid var(--dourado);
+    padding: 25px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.informacao-card:hover {
+    background: #222222;
+    transform: translateY(-4px);
+}
+
+.informacao-card h3 {
+    color: var(--dourado);
+    margin-bottom: 12px;
+    font-size: 19px;
+}
+
+.informacao-card p {
+    color: #cccccc;
+    margin-bottom: 7px;
+}
+
+/* INSCRIÇÃO */
+
+#inscricao {
+    background: #101010;
+}
+
+#formInscricao {
+    max-width: 600px;
+    margin: auto;
+    padding: 35px;
+    background: #191919;
+    border: 1px solid #444444;
+    border-radius: 12px;
+}
+
+#formInscricao .botao {
+    width: 100%;
+    margin-top: 25px;
+}
+#formCancelamento {
+    max-width: 600px;
+    margin: auto;
+    padding: 35px;
+    background: #191919;
+    border: 1px solid #444444;
+    border-radius: 12px;
+}
+
+#formCancelamento .botao {
+    width: 100%;
+    margin-top: 25px;
+}
+#formCancelamento textarea {
+    width: 100%;
+    min-height: 110px;
+    padding: 13px;
+    background: #252525;
+    border: 1px solid #555555;
+    border-radius: 6px;
+    color: #ffffff;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    resize: vertical;
+    outline: none;
+}
+
+#formCancelamento textarea:focus {
+    border-color: var(--dourado);
+}
+.resumo-inscricao {
+    background: #252525;
+    border: 1px solid var(--dourado);
+    border-radius: 8px;
+    padding: 18px;
+    margin-top: 25px;
+    text-align: center;
+}
+
+.resumo-inscricao p {
+    color: #cccccc;
+}
+
+.resumo-inscricao h3 {
+    color: var(--dourado);
+    font-size: 27px;
+}
+
+#mensagemSucesso {
+    color: var(--dourado);
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+/* PAGAMENTO */
+
+.pagamento-conteudo {
+    max-width: 550px;
+}
+
+.pagamento-conteudo h2 span {
+    color: var(--dourado);
+}
+
+.pagamento-conteudo > p {
+    margin: 15px 0;
+}
+
+#areaPagamento {
+    background: #222222;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+}
+
+#areaPagamento h3 {
+    color: var(--dourado);
+    margin-bottom: 10px;
+}
+
+#areaPagamento p {
+    margin: 8px 0;
+}
+
+.pix-demonstrativo {
+    margin: 15px auto;
+}
+
+.qr-falso {
+    width: 130px;
+    height: 130px;
+    margin: 10px auto;
+    background: repeating-linear-gradient(
+        45deg,
+        #ffffff,
+        #ffffff 5px,
+        #cccccc 5px,
+        #cccccc 10px
+    );
+    border: 5px solid #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #111111;
+    font-weight: 900;
+    font-size: 25px;
+}
+
+.aviso-demo {
+    color: #aaaaaa;
+    font-size: 13px;
+    text-align: center;
+    margin: 15px 0;
+}
+
+.pagamento-conteudo > .botao {
+    width: 100%;
+}
+
+#resultadoPagamento {
+    color: var(--dourado);
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* CONTATO */
+
+#contato {
+    background: #080808;
+    text-align: center;
+}
+
+#contato p {
+    color: #cccccc;
+    margin: 10px 0;
 }
 
 /* RODAPÉ */
 
 footer {
-    background-color: #111111;
-    border-top: 1px solid #f5c400;
+    background: #111111;
+    border-top: 2px solid var(--dourado);
     text-align: center;
-    padding: 25px;
-    color: #aaaaaa;
-    font-size: 13px;
-    line-height: 1.8;
+    padding: 25px 15px;
 }
 
-/* CELULARES */
+footer p {
+    color: #aaaaaa;
+    font-size: 14px;
+    margin: 5px;
+}
 
-@media (max-width: 700px) {
+/* RESPONSIVIDADE */
+
+@media (max-width: 900px) {
 
     header {
         flex-direction: column;
-        gap: 20px;
+        padding: 18px;
     }
 
     nav {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
+        gap: 14px;
     }
 
-    .hero h1 {
+    .inicio {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .inicio p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .inicio img {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+
+    section {
+        padding: 60px 6%;
+    }
+
+    h2 {
+        font-size: 25px;
+    }
+
+    .logo {
+        font-size: 25px;
+    }
+
+    nav {
+        gap: 12px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    .inicio {
+        min-height: auto;
+    }
+
+    .inicio h1 {
         font-size: 38px;
     }
 
-    .hero h1 span {
-        font-size: 50px;
+    .inicio p {
+        font-size: 16px;
     }
 
-}
-/* IMAGEM DA ACADEMIA */
-
-.hero img {
-    display: block;
-    width: 100%;
-    max-width: 600px;
-    height: auto;
-    margin: 30px auto;
-    border: 2px solid #f5c400;
-    border-radius: 10px;
-}
-
-/* SOBRE A IRON FIT */
-
-.sobre {
-    padding: 80px 7%;
-    text-align: center;
-    background-color: #111111;
-}
-
-.sobre h2 {
-    font-size: 35px;
-    margin-bottom: 25px;
-}
-
-.sobre h2 span {
-    color: #f5c400;
-}
-
-.sobre > p {
-    max-width: 700px;
-    margin: 0 auto 40px;
-    color: #cccccc;
-    line-height: 1.8;
-    font-size: 16px;
-}
-
-.diferenciais {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 25px;
-}
-
-.item {
-    background-color: #1c1c1c;
-    border: 1px solid #f5c400;
-    border-radius: 10px;
-    padding: 30px 20px;
-    max-width: 280px;
-    flex: 1 1 220px;
-}
-
-.item h3 {
-    color: #f5c400;
-    margin-bottom: 15px;
-    font-size: 18px;
-}
-
-.item p {
-    color: #cccccc;
-    line-height: 1.6;
-}
-/* MODALIDADES */
-
-.modalidades {
-    padding: 80px 7%;
-    text-align: center;
-    background-color: #080808;
-}
-
-.modalidades h2 {
-    font-size: 35px;
-    margin-bottom: 20px;
-}
-
-.modalidades h2 span {
-    color: #f5c400;
-}
-
-.subtitulo {
-    color: #cccccc;
-    margin-bottom: 45px;
-}
-
-.cards-modalidades {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 25px;
-}
-
-.card-modalidade {
-    background-color: #1c1c1c;
-    border: 1px solid #f5c400;
-    border-radius: 10px;
-    padding: 30px 25px;
-    max-width: 320px;
-    flex: 1 1 250px;
-    text-align: left;
-    transition: 0.3s;
-}
-
-.card-modalidade:hover {
-    transform: translateY(-5px);
-    border-color: white;
-}
-
-.card-modalidade h3 {
-    color: #f5c400;
-    font-size: 22px;
-    margin-bottom: 18px;
-}
-
-.card-modalidade p {
-    color: #cccccc;
-    line-height: 1.6;
-    margin-bottom: 20px;
-}
-
-.card-modalidade ul {
-    padding-left: 20px;
-    color: white;
-    line-height: 2;
-}
-/* PLANOS E PREÇOS */
-
-.planos {
-    padding: 80px 7%;
-    text-align: center;
-    background-color: #111111;
-}
-
-.planos h2 {
-    font-size: 35px;
-    margin-bottom: 20px;
-}
-
-.planos h2 span {
-    color: #f5c400;
-}
-
-.cards-planos {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 25px;
-    margin-top: 40px;
-}
-
-.card-plano {
-    background-color: #1c1c1c;
-    border: 1px solid #f5c400;
-    border-radius: 10px;
-    padding: 35px 25px;
-    max-width: 300px;
-    flex: 1 1 230px;
-}
-
-.card-plano h3 {
-    color: white;
-    font-size: 22px;
-    margin-bottom: 20px;
-}
-
-.preco {
-    color: #f5c400;
-    font-size: 35px;
-    font-weight: bold;
-}
-
-.periodo {
-    color: #cccccc;
-    margin-bottom: 25px;
-}
-
-.card-plano ul {
-    list-style: none;
-    color: white;
-    line-height: 2.2;
-    margin-bottom: 25px;
-}
-
-.card-plano li::before {
-    content: "✓ ";
-    color: #f5c400;
-    font-weight: bold;
-}
-
-.botao-plano {
-    display: inline-block;
-    background-color: #f5c400;
-    color: #080808;
-    padding: 12px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.botao-plano:hover {
-    background-color: white;
-}
-
-.card-plano.destaque {
-    border: 2px solid white;
-    transform: scale(1.04);
-}
-
-.aviso-planos {
-    color: #999999;
-    font-size: 12px;
-    margin-top: 30px;
-}
-/* CONTRATO E REGULAMENTO */
-
-.contrato {
-    padding: 80px 7%;
-    text-align: center;
-    background-color: #080808;
-}
-
-.contrato h2 {
-    font-size: 35px;
-    margin-bottom: 20px;
-}
-
-.contrato h2 span {
-    color: #f5c400;
-}
-
-.conteudo-contrato {
-    max-width: 850px;
-    margin: 40px auto;
-    text-align: left;
-}
-
-.regra {
-    background-color: #1c1c1c;
-    border-left: 4px solid #f5c400;
-    border-radius: 6px;
-    padding: 25px;
-    margin-bottom: 20px;
-}
-
-.regra h3 {
-    color: #f5c400;
-    margin-bottom: 12px;
-    font-size: 19px;
-}
-
-.regra p {
-    color: #cccccc;
-    line-height: 1.7;
-}
-
-.aviso-contrato {
-    color: #999999;
-    font-size: 12px;
-    margin-top: 25px;
-}
-
-#horarios {
-    padding: 70px 20px;
-    text-align: center;
-    background: #111;
-}
-
-#horarios h2 {
-    color: #d4af37;
-    margin-bottom: 30px;
-}
-
-.horario-card {
-    max-width: 450px;
-    margin: auto;
-    padding: 30px;
-    border: 1px solid #d4af37;
-    border-radius: 12px;
-    background: #1b1b1b;
-}
-
-.horario-card h3 {
-    color: #d4af37;
-    margin-top: 15px;
-}
-
-.horario-card p {
-    color: white;
-    font-size: 18px;
-}
-
-#inscricao {
-    padding: 70px 20px;
-    background: #111;
-    text-align: center;
-}
-
-#inscricao h2 {
-    color: #d4af37;
-    margin-bottom: 15px;
-}
-
-#form-inscricao {
-    max-width: 500px;
-    margin: 30px auto;
-    padding: 25px;
-    background: #1b1b1b;
-    border: 1px solid #d4af37;
-    border-radius: 12px;
-    text-align: left;
-}
-
-#form-inscricao label {
-    display: block;
-    color: #d4af37;
-    margin-top: 15px;
-}
-
-#form-inscricao input,
-#form-inscricao select {
-    width: 100%;
-    padding: 12px;
-    margin-top: 8px;
-    background: #292929;
-    color: white;
-    border: 1px solid #555;
-    border-radius: 6px;
-    box-sizing: border-box;
-}
-
-#form-inscricao button {
-    width: 100%;
-    padding: 14px;
-    margin-top: 25px;
-    background: #d4af37;
-    color: black;
-    border: none;
-    border-radius: 6px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-#mensagem-inscricao {
-    color: #d4af37;
-    font-weight: bold;
-}
-
-#inscricao small {
-    color: #aaa;
-}
-
-#contato {
-    padding: 70px 20px;
-    background: #0c0c0c;
-    text-align: center;
-}
-
-#contato h2 {
-    color: #d4af37;
-    margin-bottom: 20px;
-}
-
-#contato h2 span {
-    color: white;
-}
-
-.contato-card {
-    max-width: 550px;
-    margin: 30px auto;
-    padding: 25px;
-    background: #1b1b1b;
-    border: 1px solid #d4af37;
-    border-radius: 12px;
-}
-
-.contato-item {
-    padding: 15px;
-    border-bottom: 1px solid #444;
-}
-
-.contato-item:last-child {
-    border-bottom: none;
-}
-
-.contato-item h3 {
-    color: #d4af37;
-}
-
-.contato-item p {
-    color: white;
-}
-
-.aviso-contato {
-    color: #999;
-    font-size: 12px;
-}
-
-a.botao-plano,
-a.botao-plano:link,
-a.botao-plano:visited {
-    display: inline-block;
-    padding: 14px 30px;
-    background: #f1c40f !important;
-    color: #111 !important;
-    text-decoration: none !important;
-    font-weight: bold;
-    font-size: 16px;
-    border-radius: 8px;
-    border: 2px solid #f1c40f;
-    transition: 0.3s;
-}
-
-a.botao-plano:hover {
-    background: transparent !important;
-    color: #f1c40f !important;
+    .calculadora-plano,
+#formInscricao,
+#formCancelamento {
+    padding: 22px;
+}
+    
+    .modal-conteudo {
+        padding: 25px 18px;
+    }
+
+    .modal-conteudo > img {
+        height: 180px;
+    }
 }
